@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
-import Logo from '../../assets/icons/logo';
 
 const Header: FC = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,7 +31,7 @@ const Header: FC = (props) => {
         <Flex align="center" mr={5}>
           <Link href={`/`}>
             <IconButton height="auto" variant="unstyled" aria-label="logo-icon">
-              <Logo />
+              <Image src="/images/framer-logo.svg" />
             </IconButton>
           </Link>
         </Flex>
@@ -52,10 +51,18 @@ const Header: FC = (props) => {
           <Button
             height="100%"
             variant="unstyled"
-            borderBottom={router.pathname == '/' || router.pathname.includes('product') ? '2px solid #6366F1' : ''}
+            borderBottom={router.pathname === '/' ? '2px solid #6366F1' : ''}
             borderRadius="0"
           >
-            <Link href={`/`}>Products</Link>
+            <Link href={`/`}>Framer</Link>
+          </Button>
+          <Button
+            height="100%"
+            variant="unstyled"
+            borderBottom={router.pathname.includes('basics') ? '2px solid #6366F1' : ''}
+            borderRadius="0"
+          >
+            <Link href={`/basics`}>Api References</Link>
           </Button>
           <Spacer />
           <Flex verticalAlign="center" align="center" display={{ base: isOpen ? 'flex' : 'none', md: 'flex' }}>

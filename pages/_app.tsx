@@ -7,6 +7,8 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Router from 'next/router';
 import { FC, useEffect, useState } from 'react';
+import './styles.css';
+
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const [loading, SetLoading] = useState(false);
 

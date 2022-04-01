@@ -1,14 +1,15 @@
-import { Framer } from '@modules/Framer';
+import { FramerBasic } from '@modules/FramerBasic';
 import Head from 'next/head';
 import { FC } from 'react';
 
 const Home: FC = () => {
   return (
     <>
+      {' '}
       <Head>
-        <title>Learning Framer</title>
+        <title>Framer Api References</title>
       </Head>{' '}
-      <Framer />
+      <FramerBasic />;
     </>
   );
 };
